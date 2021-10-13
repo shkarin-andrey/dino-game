@@ -1,0 +1,126 @@
+.game {
+    position: relative;
+    max-width: 600px;
+    width: 100%;
+    height: 200px;
+    border-bottom: 1px solid #000;
+    margin: auto;
+}
+.dino {
+    width: 80px;
+    height: 50px;
+    background-image: url(img/gratis.png);
+    background-size: 80px 50px;
+    position: relative;
+    top: 150px;
+}
+.cactus {
+    width: 50px;
+    height: 40px;
+    background-image: url(img/Единорожка.png);
+    background-size: 50px 40px;
+    position: relative;
+    top: 110px;
+    left: 580px;
+}
+
+.cactus__mov {
+    animation: cactusMov 1s infinite linear;
+}
+.result {
+    display: block;
+    margin: auto;
+    position: relative;
+    top: 150px;
+    height: 40px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 900;
+    color: blue;
+    width: 100px;
+    border: 1px solid red;
+    border-radius: 10px;
+    box-shadow: 0 0 10px red;
+    outline: none;
+}
+.start {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,.7);
+}
+.start__timer {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 200px;
+    text-align: center;
+    color: blue;
+    font-weight: 700;
+    animation: start linear 1s infinite;
+}
+.end {
+    text-align: center;
+    padding-top: 10px;
+    margin-bottom: -10px;
+}
+.end span {
+    color: blue;
+    font-weight: 900;
+}
+
+@keyframes start {
+    0% {
+        opacity: 0.1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes cactusMov {
+    0% {
+        left: 580px;
+    }
+    100% {
+        left: -20px;
+    }
+}
+.jump {
+    animation: jump .5s linear;
+}
+@keyframes jump {
+    0% {
+        top: 150px;
+    }
+    30% {
+        top: 120px;
+    }
+    50% {
+        top: 100px;
+    }
+    80% {
+        top: 120px;
+    }
+    100% {
+        top: 150px;
+    }
+}
+
+@media (max-width: 576px) {
+    .cactus {
+        left: 90%;
+    }
+
+    @keyframes cactusMov {
+        0% {
+            left: 90% ;
+        }
+        100% {
+            left: 0;
+        }
+    }
+}
